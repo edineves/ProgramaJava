@@ -12,6 +12,9 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.TextArea;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Tela01 extends JFrame {
 
@@ -20,13 +23,13 @@ public class Tela01 extends JFrame {
 	private JLabel lblGenero;
 	private JLabel lblEndereo;
 	private JLabel lblEstadoCivl;
-	private JTextField textField;
-	private JTextField textField_2;
-	private JComboBox comboBox;
-	private JComboBox comboBox_1;
+	private JTextField TxtEndereco;
+	private JTextField TxNome;
+	private JComboBox cmbEstadoCivil;
+	private JComboBox cmbGenero;
+	private JButton btnlimpar;
 	private JButton btnMostrar;
-	private JButton btnLimpar;
-	private TextArea textArea;
+	private TextArea txtAreaMostrar;
 
 	/**
 	 * Launch the application.
@@ -72,34 +75,45 @@ public class Tela01 extends JFrame {
 		lblEstadoCivl.setBounds(10, 111, 78, 24);
 		contentPane.add(lblEstadoCivl);
 
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(156, 46, 250, 24);
-		contentPane.add(textField);
+		TxtEndereco = new JTextField();
+		TxtEndereco.setColumns(10);
+		TxtEndereco.setBounds(156, 46, 250, 24);
+		contentPane.add(TxtEndereco);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(156, 12, 250, 22);
-		contentPane.add(textField_2);
+		TxNome = new JTextField();
+		TxNome.setColumns(10);
+		TxNome.setBounds(156, 12, 250, 22);
+		contentPane.add(TxNome);
 
-		comboBox = new JComboBox();
-		comboBox.setBounds(156, 112, 250, 22);
-		contentPane.add(comboBox);
+		cmbEstadoCivil = new JComboBox();
+		cmbEstadoCivil.setModel(new DefaultComboBoxModel(new String[] { "selecionar", "casado ", "solteiro" }));
+		cmbEstadoCivil.setBounds(156, 112, 250, 22);
+		contentPane.add(cmbEstadoCivil);
 
-		comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(156, 77, 250, 22);
-		contentPane.add(comboBox_1);
+		cmbGenero = new JComboBox();
+		cmbGenero.setModel(new DefaultComboBoxModel(new String[] { "selecionar", "masculino", "feminino" }));
+		cmbGenero.setBounds(156, 77, 250, 22);
+		contentPane.add(cmbGenero);
 
-		btnMostrar = new JButton("mostrar ");
-		btnMostrar.setBounds(24, 172, 152, 24);
+		btnlimpar = new JButton("mostrar ");
+		btnlimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnlimpar.setBounds(24, 172, 152, 24);
+		contentPane.add(btnlimpar);
+
+		btnMostrar = new JButton("limpar");
+		btnMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnMostrar.setBounds(247, 172, 177, 22);
 		contentPane.add(btnMostrar);
 
-		btnLimpar = new JButton("limpar");
-		btnLimpar.setBounds(247, 172, 177, 22);
-		contentPane.add(btnLimpar);
-
-		textArea = new TextArea();
-		textArea.setBounds(49, 202, 386, 101);
-		contentPane.add(textArea);
+		txtAreaMostrar = new TextArea();
+		txtAreaMostrar.setBounds(51, 204, 386, 101);
+		contentPane.add(txtAreaMostrar);
 	}
 }
