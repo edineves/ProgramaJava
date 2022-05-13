@@ -140,21 +140,8 @@ public class TelaPrincipal extends JFrame {
 		btnAlterar = new JButton("Alterar");
 		btnAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				try {
-					leitor = new Leitor();
-					leitor.setCodLeitor(Integer.parseInt(txtCodLeitor.getText()));
-					leitor.setNomeLeitor(txtNomeLeitor.getText());
-					leitor.setTipoLeitor((String) cmbTipoLeitor.getSelectedItem());
-
-					dao = new LeitorDAO();
-					dao.alterar(leitor);
-
-					lblMensagem.setText("Alterado com sucesso");
-
-				} catch (Exception erro) {
-					lblMensagem.setText("Erro ao salvar: " + erro);
-				}
+				
+				
 
 			}
 		});
